@@ -1,0 +1,2 @@
+rm run
+g++ -g -o run vector.cpp main.cpp

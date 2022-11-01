@@ -1,0 +1,2 @@
+rm run
+g++ -g -o run ll.cpp main.cpp

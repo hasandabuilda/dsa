@@ -37,7 +37,6 @@ Queue<T>::~Queue() {
 template <class T>
 void Queue<T>::Enqueue(T value) {
     if (Full()) {
-        exit(EXIT_FAILURE);
         std::cout << "Queue is full" << std::endl;
     }
     else {
@@ -54,15 +53,21 @@ void Queue<T>::Enqueue(T value) {
 
 template <class T>
 T Queue<T>::Dequeue() {
-    T popValue = m_data[m_read];
-    m_data[m_read] = NULL;
-    if ((m_read + 1) == m_size) {
-        m_read = 0;
+    if (Empty()) {
+        std::cout << "Queue is empty" << std::endl;
+        return NULL;
     }
     else {
-        m_read++;
+        T popValue = m_data[m_read];
+        m_data[m_read] = NULL;
+        if ((m_read + 1) == m_size) {
+            m_read = 0;
+        }
+        else {
+            m_read++;
+        }
+        return popValue;
     }
-    return popValue;
 }
 
 template <class T>

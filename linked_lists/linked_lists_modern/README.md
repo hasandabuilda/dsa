@@ -1,0 +1,1 @@
+Heavily copied from https://github.com/jwasham/practice-cpp/tree/master/linked_lists

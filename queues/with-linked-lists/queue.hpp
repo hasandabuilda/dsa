@@ -33,7 +33,9 @@ void Queue<T>::Enqueue(T value) {
     if (!m_head) {
         m_head = newNode;
     }
-    m_tail->SetNext(newNode);
+    if (m_tail) {
+        m_tail->SetNext(newNode);
+    }
     m_tail = newNode;
 }
 
@@ -55,6 +57,7 @@ T Queue<T>::Dequeue() {
             m_head = nullptr;
             m_tail = nullptr;
         }
+        return poppedValue;
     }
 }
 

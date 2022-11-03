@@ -7,7 +7,6 @@ template <class T>
 class Node {
     public:
         Node(T value) : m_next(NULL), m_value(value) {};
-        ~Node();
         Node<T>* GetNext() { return m_next; };
         T GetValue() { return m_value; };
         void SetNext(Node<T>* nextNode) { m_next = nextNode; };
